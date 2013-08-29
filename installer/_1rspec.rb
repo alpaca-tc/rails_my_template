@@ -11,3 +11,8 @@ generate 'rspec:install'
 CODE
 
 apply_dir 'installer/rspec/*.rb'
+@after_stack << -> {
+  inside @target_path do
+    run 'rake db:migrate RAILS_ENV=test'
+  end
+}

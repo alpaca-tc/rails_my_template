@@ -9,4 +9,8 @@ public/robots.txt
 README.rdoc
 ].each { |f| remove_file(f) }
 
+inside @target_path do
+  run 'ruby ./setup.rb'
+end
+
 @after_stack.each { |cmd| cmd.call }

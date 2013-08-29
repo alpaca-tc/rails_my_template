@@ -1,3 +1,5 @@
 if install?('sitemap_generator')
-  run 'rake sitemap:install'
+  inside @target_path do
+    run 'rake sitemap:install'
+  end
 end

@@ -1,6 +1,7 @@
 module Helpers
   module Config
     extend Base
+    CHAR=[*('a'..'z'), *('A'..'Z'), *('0'..'9')].freeze
 
     def config(text)
       inject_into_file target_path, :before => /do \|generator\|/ do
@@ -24,6 +25,10 @@ module Helpers
 
     def initializers_path
       'config/initializers'
+    end
+
+    def hash_key(length)
+      Array.new(16) { CHAR[rand(CHAR.length)] }.join
     end
   end
 end

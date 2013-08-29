@@ -1,21 +1,21 @@
 !!!
 %html{ lang: 'ja' }
   %head
-    %meta{ content: 'text/html;charset=UTF-8', 'http-equiv': 'Content-Type' }/
+    %meta{ content: 'text/html;charset=UTF-8', :'http-equiv' => 'Content-Type' }/
     = display_meta_tags
     = csrf_meta_tags
     -# Load CSS
     = stylesheet_link_tag 'reset'
-    = stylesheet_link_tag params[:controller], media: 'all' if assets_exits?("#{params[:controller]}.css.scss")
+    = stylesheet_link_tag params[:controller], media: 'all' if File.exists?(Rails.root.join("app/assets/#{params[:controller]}.css.scss}"))
     -# Load JavaScript
     = javascript_include_tag :defaults
     = javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js'
-    = javascript_include_tag params[:controller] if assets_exits?("#{params[:controller]}.js.coffee")
-    -# = render "shared/google_analytics"
+    = javascript_include_tag params[:controller] if File.exists?(Rails.root.join("app/assets/#{params[:controller]}.js.coffee"))
+    -# render "shared/google_analytics"
 
   %body
     %header
-      %h1#logo_text= @_crumbs.to_title
+      %h1 Test
     #main_contents
       = yield
     %footer
