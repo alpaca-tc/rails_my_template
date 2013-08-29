@@ -1,8 +1,10 @@
 require 'pry'
 $: << File.dirname(__FILE__)
-@template_path = '/Users/alpaca/project/my_rails_template'
+@root_path = '/Users/alpaca/project/my_rails_template'
+@installer_path = "#{@root_path}/installer"
+@target_path = @destination_stack.first
 
-Dir.chdir(@template_path) do
+Dir.chdir(@root_path) do
   # Extends Thor syntax
   Dir['./thor/*.rb'].each { |f| require f }
   # Loads Helpers
@@ -11,13 +13,12 @@ Dir.chdir(@template_path) do
   Dir['./core_ext/*.rb'].each { |f| require f }
 end
 
+@debug = true
 @config = Helpers::Config.setup(self)
+@installed = []
+@after_stack = []
 
-%w[
-  initialize
-  rspec
-  database
-  asset_gems
-].each { |path| apply "#{@template_path}/#{path.gsub(/^\s*/, '')}.rb" }
-
-run 'bundle'
+apply "#{@root_path}/before_initialize.rb"
+apply_dir('installer/*.rb')
+apply "#{@root_path}/after_initialize.rb"
+apply "#{@root_path}/git.rb"

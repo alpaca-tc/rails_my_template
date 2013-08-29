@@ -1,0 +1,31 @@
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+/.bundle
+/db/*.sqlite3
+/db/schema.rb
+/config/database.yml
+/config/config.yml
+/public/assets/estate_images
+/public/assets
+/.idea
+/~
+/log/*.log
+/tmp
+/coverage
+/coverage/*
+/doc
+tags
+.rspec
+
+# ignore swapfile
+.DS_Store
+*.*~
+*.*swp
+*.*swo
+.htpasswd

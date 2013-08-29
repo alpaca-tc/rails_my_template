@@ -1,0 +1,26 @@
+ja:
+  formtastic:
+    titles:
+      post_details: "Post details"
+    labels:
+      post:
+        title: "タイトル"
+        body: "Write something..."
+        edit:
+          title: "タイトルを編集"
+    hints:
+      post:
+        title: "Choose a good title for your post."
+        body: "Write something inspiring here."
+    placeholders:
+      post:
+        title: "Title your post"
+        slug: "Leave blank for an automatically generated slug"
+      user:
+        email: "test@example.com"
+    actions:
+      create: "%{model}を新規作成"
+      update: "%{model}を更新"
+      reset: "リセット"
+      cancel: "キャンセル"
+      dummie: "開始"

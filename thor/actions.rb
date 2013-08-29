@@ -1,4 +1,6 @@
 def install_gem(gem_name, *args)
+  @installed << gem_name
+
   gem(gem_name.dup, *args)
   version = args.select { |val| val.is_a?(String) && val =~ /^(>=\s+|~>\s+)[0-9.]+$/ }
   version = [version, nil].flatten[0]
@@ -11,6 +13,13 @@ def install_gem(gem_name, *args)
   end
 end
 
+def apply_dir(path)
+  Dir.chdir(@root_path) do
+    Dir["#{path}"].each { |f| apply "#{Dir.pwd}/#{f}" }
+  end
+end
+
 def install?(gem_name)
-  yes?("Install #{gem_name}?", :yellow)
+  return false if @installed.include?(gem_name)
+  @debug || yes?("Install #{gem_name}?", :yellow)
 end

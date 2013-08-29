@@ -1,0 +1,89 @@
+ja:
+  active_admin:
+    dashboard: ダッシュボード
+    powered_by: All rights reserved.
+    update_model: 編集
+    index:
+      action: 
+    dashboard_welcome:
+      welcome: Active Admin へようこそ。ダッシュボードの初期ページを表示しています。
+      call_to_action: ダッシュボードに項目を追加するために 'app/admin/dashboards.rb' を編集してください。
+    access_denied:
+      message: アクセス権がありません
+    cancel: 取り消す
+    clear_filters: 条件を削除する
+    create_model: "%{model} を作成する"
+    delete: 削除
+    delete_confirmation: 本当に削除しますか?
+    delete_model: "%{model} を削除する"
+    destroy_confirm: 関連データと共に削除します
+    destroy_image: 画像を削除してもよろしいでしょうか
+    destroy_link: 削除
+    details: "%{model} の詳細"
+    download: ダウンロード
+    edit: 編集
+    edit_link: 編集
+    edit_model: "%{model} を編集する"
+    empty: 空
+    equal_to: 等しい
+    filter: 絞り込む
+    greater_than: より大きい
+    has_many_delete: 削除する
+    has_many_new: "新規に %{model} を追加する"
+    less_than: より小さい
+    logout: ログアウト
+    main_content: 内容を表示するために %{model}#main_content を実装してください。
+    new_model: "%{model} を作成する"
+    next: 次
+    previous: 前
+    search_field: "%{field} で絞り込む"
+    show: 閲覧
+    show_link: 閲覧
+    unknown: 未指定
+    view: 閲覧
+    sidebars:
+      filters: 検索条件
+    pagination:
+      empty: "%{model} は見つかりませんでした"
+      one: "<b>1</b> 件の %{model} を表示しています"
+      one_page: "<b>全 %{n}</b> 件の %{model} を表示しています"
+      multiple: "全 <b>%{total}</b> 件中 <b>%{from}&nbsp;-&nbsp;%{to}</b> 件の %{model} を表示しています"
+    any: 任意
+    blank_slate:
+      content: "%{resource_name} はまだありません。"
+      link: 作成する
+    batch_actions:
+      button_label: バッチアクション
+      delete_confirmation: "あなたはこれらを削除してもよろしいです %{plural_model}? あなたはこれを取り消すことはできません。"
+      succesfully_destroyed:
+        one: "削除しました 1 %{model}"
+        other: "削除しました %{count} %{plural_model}"
+      selection_toggle_explanation: (トグルの選択)
+      link: 作成する
+      action_label: "%{title} 選択した"
+      labels:
+        destroy: 削除する
+    comments:
+      body: ボディ
+      author: 作成者
+      title: コメント
+      add: コメントを追加
+      resource: リソース
+      no_comments_yet: コメントはまだありません。
+      title_content: "コメント (%{count})"
+      errors:
+        empty_text: コメントが保存されていない、テキストは空でした。
+    devise:
+      login:
+        title: ログイン
+        remember_me: ログイン情報を記録する
+        submit: ログイン
+      reset_password:
+        title: パスワードをお忘れですか？
+        submit: 私のパスワードをリセットする
+      cyhange_password:
+        title: パスワードを変更する
+        submit: パスワードを変更する
+      links:
+        sign_in: サインイン
+        forgot_your_password: パスワードをお忘れですか？

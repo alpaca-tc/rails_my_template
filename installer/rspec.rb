@@ -10,6 +10,4 @@ generate 'rspec:install'
   generator.test_framework :rspec
 CODE
 
-if install?('factory_girl_rails')
-  apply "#{@template_path}/rspec/factory_girl.rb"
-end
+apply_dir 'installer/rspec/*.rb'
