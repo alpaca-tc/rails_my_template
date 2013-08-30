@@ -28,6 +28,8 @@ if install?('omniauth')
   end
 
   @config.append_routes <<-CODE
+  match '/auth/logout', to: 'sessions#destroy', via: [:post], as: :logout
+  match '/auth/:provider', to: 'sessions#create', via: [:get, :post], as: :login
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   CODE
 

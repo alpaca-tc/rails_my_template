@@ -10,4 +10,9 @@ class SessionsController < ApplicationController
 
     redirect_to root_path, notice: 'Signed In'
   end
+
+  def destroy
+    session[:oauth_token_id] = nil
+    redirect_to root_path
+  end
 end
