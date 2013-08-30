@@ -11,6 +11,7 @@ README.rdoc
 
 inside @target_path do
   run 'ruby ./setup.rb'
+  run 'rake db:migrate'
 end
 
 @after_stack.each { |cmd| cmd.call }

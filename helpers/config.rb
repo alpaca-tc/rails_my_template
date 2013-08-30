@@ -15,6 +15,12 @@ module Helpers
       end
     end
 
+    def append_routes(text)
+      inject_into_file 'config/routes.rb', :after => "Application.routes.draw do\n" do
+        text.optimize(2)
+      end
+    end
+
     def path
       'config/application.rb'
     end

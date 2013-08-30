@@ -10,7 +10,8 @@ if install?('activeadmin')
   # gem 'ransack',             github: 'ernie/ransack',         branch: 'rails-4'
   install_gem 'jquery-ui-rails', '~>4.0.4'
   install_gem 'arbre', '1.0.1'
-  install_gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
+  # TODO install_gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
+  gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
   inside @destination_stack.first do
     run 'bundle install'
   end

@@ -1,6 +1,11 @@
 if install?('ffaker')
-  install_gem 'ffaker', group: :test
+  # TODO install_gem 'ffaker_custom', github: 'alpaca-tc/ffaker', require: false, group: :test
+  gem 'ffaker_custom', github: 'alpaca-tc/ffaker', require: false, group: :test
   @rspec.head <<-CODE
-  require 'ffaker'
+  require 'faker'
   CODE
+
+  inside @target_path do
+    run 'bundle'
+  end
 end

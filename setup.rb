@@ -6,11 +6,11 @@ $: << File.dirname(__FILE__)
 
 Dir.chdir(@root_path) do
   # Extends Thor syntax
-  Dir['./thor/*.rb'].each { |f| require f }
-  # Loads Helpers
-  Dir['./helpers/*.rb'].each { |f| require f }
-  # Extends String
-  Dir['./core_ext/*.rb'].each { |f| require f }
+  Dir[
+    './thor/*.rb', 
+    './helpers/*.rb', 
+    './core_ext/*.rb'
+  ].each { |f| require f }
 end
 
 @debug = true
